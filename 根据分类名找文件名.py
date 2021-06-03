@@ -1,0 +1,15 @@
+import json
+from collections import defaultdict
+
+with open('img_val.json') as f:
+    data = json.load(f)
+    classname_filename_map = defaultdict(list)
+    for filename, v in data.items():
+        classname = v['classname']
+        classname_filename_map[classname].append(filename)
+    while True:
+        classname = input('输入分类名：')
+        filename = classname_filename_map.get(classname)
+        print(filename)
+# 输入分类名：wood_rabbit
+# ['ILSVRC2012_val_00000097', 'ILSVRC2012_val_00000685', 'ILSVRC2012_val_00000937', 'ILSVRC2012_val_00001670', 'ILSVRC2012_val_00002029', 'ILSVRC2012_val_00002473', 'ILSVRC2012_val_00004300', 'ILSVRC2012_val_00005259', 'ILSVRC2012_val_00005636', 'ILSVRC2012_val_00006108', 'ILSVRC2012_val_00010064', 'ILSVRC2012_val_00010923', 'ILSVRC2012_val_00011502', 'ILSVRC2012_val_00012698', 'ILSVRC2012_val_00013125', 'ILSVRC2012_val_00013352', 'ILSVRC2012_val_00014071', 'ILSVRC2012_val_00014688', 'ILSVRC2012_val_00014788', 'ILSVRC2012_val_00017270', 'ILSVRC2012_val_00017565', 'ILSVRC2012_val_00017619', 'ILSVRC2012_val_00019651', 'ILSVRC2012_val_00020084', 'ILSVRC2012_val_00020415', 'ILSVRC2012_val_00020917', 'ILSVRC2012_val_00021667', 'ILSVRC2012_val_00021928', 'ILSVRC2012_val_00024646', 'ILSVRC2012_val_00024659', 'ILSVRC2012_val_00024858', 'ILSVRC2012_val_00025889', 'ILSVRC2012_val_00026361', 'ILSVRC2012_val_00026482', 'ILSVRC2012_val_00027435', 'ILSVRC2012_val_00029387', 'ILSVRC2012_val_00029810', 'ILSVRC2012_val_00033548', 'ILSVRC2012_val_00033989', 'ILSVRC2012_val_00034860', 'ILSVRC2012_val_00035244', 'ILSVRC2012_val_00040227', 'ILSVRC2012_val_00040884', 'ILSVRC2012_val_00041378', 'ILSVRC2012_val_00041387', 'ILSVRC2012_val_00041946', 'ILSVRC2012_val_00042110', 'ILSVRC2012_val_00044412', 'ILSVRC2012_val_00049274', 'ILSVRC2012_val_00049739']
