@@ -1,0 +1,2 @@
+# ImageNet_Chinese_Translation
+ImageNet Chinese Translation
